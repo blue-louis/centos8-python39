@@ -7,10 +7,7 @@ RUN dnf clean all \
     && dnf install bzip2-devel expat-devel gdbm-devel \
     ncurses-devel openssl-devel readline-devel \
     sqlite-devel tk-devel xz-devel zlib-devel libffi-devel wget \
-    nc strace -y \
-    && yum -y localinstall https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm --disablerepo='*' \
-    && dnf -qy module disable postgresql \
-    && dnf -y install postgresql12
+    nc strace -y
 
 RUN wget https://www.python.org/ftp/python/${VERSION}/Python-${VERSION}.tgz \
     && tar -xf Python-${VERSION}.tgz \
